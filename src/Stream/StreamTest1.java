@@ -90,7 +90,8 @@ public class StreamTest1 {
 		
 		//finding matches 
 		// anyMatch() convert it into boolean
-		boolean bool= newStream.anyMatch(s->s.equalsIgnoreCase("Priti"));
+		boolean bool= newStream.anyMatch(s->s.equalsIgnoreCase("Rohit"));
+		System.out.println(bool);
 	    Assert.assertTrue(bool);
 	    
 	    
