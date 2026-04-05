@@ -1,8 +1,10 @@
 package Stream;
 
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.testng.Assert;
@@ -62,7 +64,7 @@ public class StreamTest1 {
 	}
 	
 	
-	@Test
+//	@Test
 	public void streamMap() {
 		
 		//printing the names having last letter as "a" with upper case 
@@ -92,12 +94,25 @@ public class StreamTest1 {
 		// anyMatch() convert it into boolean
 		boolean bool= newStream.anyMatch(s->s.equalsIgnoreCase("Rohit"));
 		System.out.println(bool);
-	    Assert.assertTrue(bool);
-	    
-	    
-	
-		
+	    Assert.assertTrue(bool);	
 	}
 
-
+	@Test
+	public void streamCollect() {
+		
+		List<String> lS = Stream.of("Abhijit","Abhishek","Dona","BigDaddy","Ananya").filter(s->s.endsWith("a")).map(s-> s.toUpperCase())
+		.collect(Collectors.toList());
+		System.out.println(lS.get(0));
+		
+		
+		//Assignment
+		List<Integer> values=Arrays.asList(5,2,5,7,8,8,9,2,3,1,2);
+		//Printing unique no. from this array
+		//sort the array and extract the value in 3rd position
+		
+//		values.stream().distinct().forEach(s->System.out.println(s));
+		
+		List<Integer> list1 = values.stream().distinct().sorted().collect(Collectors.toList());
+		System.out.println(list1.get(2));
+	}
 }
