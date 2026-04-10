@@ -1,6 +1,5 @@
 package Stream;
 
-import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -110,7 +109,7 @@ public class StreamTest1 {
 		//Printing unique no. from this array
 		//sort the array and extract the value in 3rd position
 		
-//		values.stream().distinct().forEach(s->System.out.println(s));
+		values.stream().distinct().forEach(s->System.out.println(s));
 		
 		List<Integer> list1 = values.stream().distinct().sorted().collect(Collectors.toList());
 		System.out.println(list1.get(2));
